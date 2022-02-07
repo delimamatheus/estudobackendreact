@@ -20,6 +20,21 @@ class UserController{
         return response.json(user);
     }
 
+    public async enable(request: Request, response: Response): Promise<Response>{
+        const { id } = request.params;
+        
+        const userRepository = new UserRepository();
+        const enableUser = new EnableUserService(userRepository);
+
+        const user = await createUser.execute({
+            id,
+        });
+
+        delete user.password;
+
+        return response.json(user);
+    }
+
 }
 
 export default UserController

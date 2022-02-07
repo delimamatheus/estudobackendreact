@@ -3,7 +3,6 @@ import express, { Request, Response, NextFunction } from 'express';
 import "./database";
 import routes from "./routes";
 import '../config/env.ts'
-import 'express-async-errors';
 
 const app = express()
 
